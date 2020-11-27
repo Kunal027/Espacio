@@ -9,6 +9,5 @@ public class Explosion_behav_ast : MonoBehaviour
     void Start()
     {
         Destroy(this.gameObject, 4.0f);
-        
     }
 }
