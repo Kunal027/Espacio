@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int _score;
 
+    private int _highScore;
+
     private UI_Manager _ui_Manager;
 
     private GameManager _gameManager;
@@ -217,6 +219,14 @@ public class Player : MonoBehaviour
     {
         _score += points;
         _ui_Manager.UpdateScore(_score);
+    }
+
+    public void AddBestScore()
+    {
+        if (_score > _highScore)
+        {
+            _highScore = _score;
+        }
     }
 
 }

@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
         if(Time.time > _canfire)
         {
-            _fireRate = Random.Range(3f, 7f);
+            _fireRate = Random.Range(10f, 15f);
             _canfire = Time.time + _fireRate;
             GameObject enemyLaser = Instantiate(_laserPrephab, transform.position, Quaternion.identity);
             Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
@@ -85,6 +85,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.tag == "Laser")
         {
+            _canfire = 0f;
             Destroy(other.gameObject, 2.8f);
             if (_player != null)
             {
@@ -96,6 +97,8 @@ public class Enemy : MonoBehaviour
             _speed = 0;
             this.GetComponent<Collider2D>().enabled = false;
             Destroy(other.gameObject);
+            
+            
         }
 
     }
