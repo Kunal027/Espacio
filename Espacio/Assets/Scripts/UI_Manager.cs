@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -67,5 +68,16 @@ public class UI_Manager : MonoBehaviour
         _restartGametext.gameObject.SetActive(true);
         StartCoroutine(GameOverFlickerRoutine());
 
+    }
+
+    public void ResumePlay()
+    {
+        //GameManager gameManager = GameObject.Find("Game_Mnagaer").GetComponent<GameManager>();
+        _gameManager.ResumeGame();
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene(0);
     }
 }
