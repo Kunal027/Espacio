@@ -853,6 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef227fff6efe55e449d2f117614144ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCoopMode: 1
   _isGameOver: 0
 --- !u!4 &1436519062
 Transform:
@@ -1407,6 +1408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033320915374358423, guid: 54a0459a9c7755a449a639df3d919489,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 2033320915374358429, guid: 54a0459a9c7755a449a639df3d919489,
         type: 3}

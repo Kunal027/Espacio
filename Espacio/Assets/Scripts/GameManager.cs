@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isCoopMode = false;
+
     [SerializeField]
-    private bool _isGameOver;
+    private bool _isGameOver; 
 
     private void Update()
     {

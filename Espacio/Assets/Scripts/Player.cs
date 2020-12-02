@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 
     private UI_Manager _ui_Manager;
 
+    private GameManager _gameManager;
+
     [SerializeField]
     private AudioClip _laserSoundclip;
     private AudioSource _audioSource;
@@ -41,12 +43,25 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+        if(_gameManager == null)
+        {
+            Debug.LogError("Game Maneger not found");
+        }
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<Spawn_Manager>();
         _ui_Manager = GameObject.Find("Canvas").GetComponent<UI_Manager>();
         _audioSource = GetComponent<AudioSource>();
+        if (_gameManager.isCoopMode == false)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
 
-        if( _audioSource == null)
+        if (_gameManager == null)
+        {
+            Debug.LogError("Game Manager is null");
+        }
+
+        if ( _audioSource == null)
         {
             Debug.LogError("No audio on player is null");
         }
